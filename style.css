@@ -1,0 +1,27 @@
+/* Formular */
+
+.fehler {
+  color: red;
+  font-weight: bold;
+  list-style: none;
+}
+
+.teilnehmer {
+  color: dodgerblue;
+}
+
+label {
+  display: block;
+}
+
+/* Navigation */
+
+.nav {
+  list-style: none;
+  display: inline-block;
+  margin-right: 2rem;
+}
+
+#nav {
+  text-decoration: none;
+}
