@@ -1,9 +1,6 @@
 <?php
 
-function insertdata($anrede, $vorname, $nachname, $email, $firma, $selected, $checked, $anmerkung) {
-    
-    $panels = implode(",", $checked);
-
+function createdatabase() {
     $mysqli = new mysqli('localhost', 'root', '', 'wtc2021');
         if($mysqli->connect_error) {
             echo 'Fehler bei der Verbindung: ' . mysqli_connect_error();
@@ -25,6 +22,24 @@ function insertdata($anrede, $vorname, $nachname, $email, $firma, $selected, $ch
             Anmerkung VARCHAR(255),
             PRIMARY KEY (id)
             )';
+
+    $mysqli->query($sql);
+    $mysqli->close();
+};
+
+
+function insertdata($anrede, $vorname, $nachname, $email, $firma, $selected, $checked, $anmerkung) {
+    
+    $panels = implode(",", $checked);
+
+    $mysqli = new mysqli('localhost', 'root', '', 'wtc2021');
+        if($mysqli->connect_error) {
+            echo 'Fehler bei der Verbindung: ' . mysqli_connect_error();
+            exit();
+        }
+        if(!$mysqli->set_charset('utf8')) {
+            echo 'Fehler beim Laden von UTF-8: ' . mysqli_error();
+        }
 
     $stmt = $mysqli->prepare('INSERT INTO Anmeldungen 
             (Anrede, Vorname, Nachname, Email, Firma, Anreise, Panele, Anmerkung)
