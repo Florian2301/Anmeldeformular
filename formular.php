@@ -114,9 +114,7 @@ function anmeldeformular($anrede = "", $vorname = "", $nachname = "", $email = "
 }
 
 function absenden() {
-    global $anreise;
-    global $themen;
-
+    
     isset($_POST["anrede"]) ? $anrede = $_POST["anrede"] : $anrede = "";
     isset($_POST["vorname"]) && is_string($_POST["vorname"]) ? $vorname = trim($_POST["vorname"]) : $vorname = "";
     isset($_POST["nachname"]) && is_string($_POST["nachname"]) ? $nachname = trim($_POST["nachname"]) : $nachname = "";
