@@ -149,6 +149,7 @@ function absenden() {
         echo "<p>Wir werden Ihnen in Kürze weitere Infos an Ihre Email-Adresse $email zusenden.</p>";
         echo "<p>Möchten Sie noch einen weiteren Teilnehmer anmelden? Dann klicken Sie bitte <a href='formular.php' class='teilnehmer'>hier</a></p>";
         echo "</div>";
+        createdatabase();
         insertdata($anrede, $vorname, $nachname, $email, $firma, $selected, $checked, $anmerkung);
     }
 }
